@@ -1,0 +1,22 @@
+const int redPin = A0;      // sensor to control red color
+const int greenPin = A1;    // sensor to control green color
+const int bluePin = A2;     // sensor to control blue color
+
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(redPin, INPUT_PULLUP); 
+  pinMode(greenPin, INPUT_PULLUP);
+  pinMode(bluePin, INPUT_PULLUP); 
+}
+
+void loop() {
+ Serial.print(!digitalRead(redPin));
+  Serial.print(",");
+  Serial.print(!digitalRead(greenPin));
+  Serial.print(",");
+  Serial.println(!digitalRead(bluePin));
+
+  
+}
